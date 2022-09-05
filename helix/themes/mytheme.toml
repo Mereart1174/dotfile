@@ -1,0 +1,121 @@
+# inspried dracula(background) onedark(punctuation) catppuccin(blue,redc) 
+
+"error"     = { fg = "red" }
+"warning"   = { fg = "cyan" }
+
+# UI
+"ui.background"             = { fg = "foreground", bg = "background" }
+"ui.text"                   = { fg = "foreground" }
+"ui.cursor"                 = { fg = "yellow", bg = "red", modifiers = ["dim"] }
+"ui.cursor.match"           = { fg = "yellow", modifiers = ["underlined"] }
+"ui.cursor.primary"         = { fg = "yellow", bg = "red", modifier = ["dim"] }
+"ui.help"                   = { fg = "yellow", bg = "background_dark" }
+"ui.linenr"                 = { fg = "comment" }
+"ui.linenr.selected"        = { fg = "yellow" }
+"ui.menu"                   = { fg = "yellow", bg = "background_dark" }
+"ui.menu.selected"          = { fg = "cyan", bg = "background_dark" }
+"ui.popup"                  = { fg = "foreground", bg = "background_dark" }
+"ui.selection"              = { bg = "secondary_highlight" }
+"ui.selection.primary"      = { bg = "primary_highlight" }
+"ui.statusline"             = { fg = "yellow", bg = "background_dark" }
+"ui.statusline.inactive"    = { fg = "pink", bg = "background_dark" }
+"ui.text.focus"             = { fg = "cyan" }
+"ui.window"                 = { fg = "foreground" }
+"ui.virtual"                = { fg = "comment" }
+
+# Syntax
+'type'                          = { fg = 'yellow' }
+'constructor'                   = { fg = 'blue' }
+'constant'                      = { fg = 'cyan' }
+'constant.character.escape'     = { fg = 'green' }
+'string'                        = { fg = 'gold' }
+'string.regexp'                 = { fg = 'blue' }
+'string.special.url'            = { fg = 'gold', modifiers = ['underlined'] }
+'comment'                       = { fg = 'slate', modifiers = ['italic'] }
+'comment.block.documentation'   = { fg = 'slate' }
+'variable'                      = { fg = 'foreground' }
+'variable.builtin'              = { fg = 'foreground', modifiers = ['italic'] }
+'label'                         = { fg = 'paleblue' }
+'punctuation'                   = { fg = 'grey7' }
+'punctuation.special'           = { fg = 'grey7' }
+'punctuation.bracket'           = { fg = 'grey7' }
+"punctuation.delimiter"         = { fg = "grey7" }
+'keyword'                       = { fg = 'pink' }
+'keyword.control.import'        = { fg = 'purple', modifiers = ['italic'] }
+'keyword.control.return'        = { fg = 'pink', modifiers = ['italic'] }
+'keyword.control.exception'     = { fg = 'red' }
+'operator'                      = { fg = 'pink' }
+'function'                      = { fg = 'blue' }
+'function.macro'                = { fg = 'green' }
+'function.special'              = { fg = 'pink' }
+'tag'                           = { fg = 'yellow' }
+'namespace'                     = { fg = 'green' }
+'property'                      = { fg = 'blue' }
+'special'                       = { fg = 'greyE' }
+'module'                        = { fg = 'greyE' }
+'attribute'                     = { fg = 'paleblue' }
+
+# diff
+"diff.plus"     = { fg = "green" }
+"diff.delta"    = { fg = "orange" }
+"diff.minus"    = { fg = "red" }
+
+# MARKUP
+'markup.heading'        = { fg = 'blue', modifiers = ['bold'] }
+'markup.heading.marker' = { fg = 'grey4', modifiers = ['dim'] }
+'markup.heading.1'      = { fg = 'blue', modifers = ['bold'] }
+'markup.heading.2'      = { fg = 'paleblue', modifers = ['bold']  }
+'markup.heading.3'      = { fg = 'green', modifiers = ['bold'] }
+'markup.heading.4'      = { fg = 'pink', modifiers = ['bold'] }
+'markup.heading.5'      = { fg = 'peach', modifiers = ['bold'] }
+'markup.heading.6'      = { fg = 'slate', modifiers = ['bold'] }
+'markup.list'           = { fg = 'pink' }
+'markup.bold'           = { fg = 'pink', modifiers = ['bold'] }
+'markup.italic'         = { fg = 'pink', modifiers = ['italic'] }
+'markup.link'           = { fg = 'pink', modifiers = ['underlined'] }
+'markup.link.url'       = { fg = 'slate', modifiers = ['underlined'] }
+'markup.quote'          = { fg = 'green', modifiers = ['italic'] }
+'markup.raw'            = { fg = 'gold', bg = 'background2' }
+
+[palette]
+background = "#282a36"
+background_dark = "#21222c"
+primary_highlight = "#800049"
+secondary_highlight = "#4d4f66"
+# foreground = "#f8f8f2"
+# foreground = "#D9E0EE";
+comment = "#6272a4"
+cyan = "#89DCEB"
+foreground = "#fffad8"
+
+red = "#ff5555"
+red2 = '#ff3030'
+orange = "#ffb86c"
+yellow = "#ffd866"
+green = '#addb67'
+purple = "#bd93f9"
+pink = '#c792ea'
+# red: #F28FAD;
+purple2 = '#9b30ff'
+pink2 = '#e066ff'
+
+peach = "#f78c6c"
+gold = "#ecc48d"
+blue = "#96CDFB"
+sky = "#8be9fd"
+paleblue = "#7fdbca"
+
+# Greys are named after their value.
+grey2 = '#222222'
+grey4 = '#444444'
+grey7 = '#777777'
+greyE = '#eeeeee'
+
+orange2 = "#fc9867"
+yellow2 = "#f1fa8c"
+
+text     = "#e0def4"
+# text = #ffeae8;
+love     = "#eb6f92"
+rose     = "#ebbcba"
+foam     = "#9ccfd8"

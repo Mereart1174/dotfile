@@ -1,0 +1,106 @@
+//https://github.com/theCode-Breaker/riverwm/blob/main/waybar/river/config-river
+{
+	"layer": "top",
+	"modules-left": ["custom/launcher", "cpu", "memory", "tray"],
+	//"modules-center": ["sway/workspaces"],
+	"modules-right": ["backlight", "pulseaudio", "clock", "battery", "custom/power"],
+	
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+        //"format-bluetooth": " {icon} {volume}%",
+        //"format-bluetooth-muted": " {icon} {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		//ALSA"on-click":"amixer set Master toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	},
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+        },
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "focused": " ",
+            "urgent": " ",
+            "default": " ",
+        },
+        "icon-size": 14
+    },
+
+    "network": {
+		"tooltip": false,
+		"format-wifi": "  {essid}",
+		"format-ethernet": ""
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "light -A 5",
+        //"on-scroll-up": "xbacklight -inc 5",
+        "on-scroll-down": "light -A 5",
+		//"on-scroll-down": "xbacklight -dec 5"
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "🔋⚡{capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+    "clock": {
+        "format": "{: %R   %m/%d}"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": " ",
+        "on-click": "wlogout",
+    },
+}

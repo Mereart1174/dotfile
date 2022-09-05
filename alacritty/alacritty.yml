@@ -1,0 +1,127 @@
+# Colors (Monokai Pro)
+colors:
+  # Default colors
+  primary:
+    background: '#282a36'
+    foreground: '#fffaf8'
+  cursor:
+      text: "#777777"
+      cursor: "#89dceb"
+  # Normal colors
+  normal:
+    black:   '#4d4f66'
+    red:     '#ff5555'
+    green:   '#addb67'
+    yellow:  '#ffd866'
+    blue:    '#96cdfb'
+    magenta: '#bd93f9'
+    cyan:    '#8be9fd'
+      #white: = '#fffad8'
+      #white: = '#fffaf8'
+    white:   '#f8f8f2'
+
+  # Bright colors
+  bright:
+    black:   '#4d4f66'
+    red:     '#ff5555'
+    green:   '#addb67'
+    yellow:  '#ffd866'
+    blue:    '#96cdfb'
+    magenta: '#bd93f9'
+    cyan:    '#8be9fd'
+    white:   '#f8f8f2'
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: InconsolataGo Nerd Font
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: InconsolataGo Nerd Font
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: InconsolataGo Nerd Font
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: InconsolataGo Nerd Font
+    style: Bold Italic
+
+  # Point size
+  size: 24.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+window:
+  decorations: none
+  dimensions:
+    columns: 88
+    lines: 29
+    
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  #position:
+  #  x: 0
+  #  y: 0
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 255
+    y: 0
+  dynamic_padding: false
+  opacity: 0.8
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  #startup_mode: Fullscreen
+
+  # Window title
+  # title: Alacritty
+
+  # Allow terminal applications to change Alacritty's window title.
+  #dynamic_title: true
+
+  # Window class (Linux/BSD only):
+  #class:
+    # Application instance name
+    #instance: Alacritty
+    # General application class
+    #general: Alacritty
+
+  # GTK theme variant (Linux/BSD only)
+  #
+  # Override the variant of the GTK theme. Commonly supported values are `dark`
+  # and `light`. Set this to `None` to use the default theme variant.
+  #gtk_theme_variant: None
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
