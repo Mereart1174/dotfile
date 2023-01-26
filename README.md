@@ -1,5 +1,7 @@
 ### My dotfiles in ArchLinux
 
+<img class="special-img-class" src="/Screenshot.png"/>
+
 `hyprland`: WM
 
 `swww / mpvpaper`: Wallpaper
@@ -35,4 +37,7 @@ Other: `fcitx5-rime` `mpv` `imv` `easyeffects` `brightnessctl` `pipewire` `pamix
 CMD: `doas` `exa` `ripgrep` `fd` `bat` `dust` `zoxide` `bottom`
 
 Grub theme: [CyberEXS](https://github.com/HenriqueLopes42/themeGrub.CyberEXS)
+
 Font: [LxgwWenKai](https://github.com/lxgw/LxgwWenKai), InconsolataGo Nerd Font
+
+xxx_: Not used now
