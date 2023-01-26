@@ -45,10 +45,14 @@ xxx_: Not used now
 ## Acknowledgement
 * [AmadeusWM/dotfiles-hyprland](https://github.com/AmadeusWM/dotfiles-hyprland)
     * hyprland
+* [ayamir/nvimdots](https://github.com/ayamir/nvimdots)
+    * neovim
 * [Chinck2D/neofetch-themes](https://github.com/Chick2D/neofetch-themes/tree/main/normal/bejkon2)
     * neofetch
 * [flick0/dotfiles](https://github.com/flick0/dotfiles/tree/aurora)
     * hyprland dunst cava btop
+* [glepnir/dope](https://github.com/glepnir/dope)
+    * neovim
 * [mmsaeed509/bspwm-dots](https://github.com/mmsaeed509/bspwm-dots)
     * neofetch
 * [theCode-Breaker/riverwm](https://github.com/theCode-Breaker/riverwm)
