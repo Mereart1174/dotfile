@@ -1,6 +1,6 @@
 ### My dotfile on ArchLinux
 
-<img class="special-img-class" src="/hyprland.png"/>
+<img class="special-img-class" src="/Screenshot/neofetch_dunst.png"/>
 
 `hyprland`: WM
 
