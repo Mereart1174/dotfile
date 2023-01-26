@@ -49,5 +49,7 @@ xxx_: Not used now
     * neofetch
 * [flick0/dotfiles](https://github.com/flick0/dotfiles/tree/aurora)
     * hyprland dunst cava btop
+* [mmsaeed509/bspwm-dots](https://github.com/mmsaeed509/bspwm-dots)
+    * neofetch
 * [theCode-Breaker/riverwm](https://github.com/theCode-Breaker/riverwm)
     * waybar
