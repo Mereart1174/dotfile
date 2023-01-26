@@ -1,4 +1,4 @@
-### My dotfiles in ArchLinux
+### My dotfile on ArchLinux
 
 <img class="special-img-class" src="/hyprland.png"/>
 
