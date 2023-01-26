@@ -1,0 +1,14 @@
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+INPUT_METHOD=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus
+
+WLR_RENDERER=vulkan
+
+# firefox in wayland
+MOZ_ENABLE_WAYLAND=1
+
+GBM_BACKEND=nvidia-drm
+__GLX_VENDOR_LIBRARY_NAME=nvidia

@@ -1,27 +1,54 @@
-//https://github.com/theCode-Breaker/riverwm/blob/main/waybar/river/config-river
+// Based: https://github.com/theCode-Breaker/riverwm/blob/main/waybar/river/config-river
 {
-	"layer": "top",
-	"modules-left": ["custom/launcher", "cpu", "memory", "tray"],
-	//"modules-center": ["sway/workspaces"],
-	"modules-right": ["backlight", "pulseaudio", "clock", "battery", "custom/power"],
-	
-	"pulseaudio": {
-		"tooltip": false,
-		"scroll-step": 5,
-		"format": "{icon} {volume}%",
-		"format-muted": "{icon} {volume}%",
-        //"format-bluetooth": " {icon} {volume}%",
-        //"format-bluetooth-muted": " {icon} {volume}%",
-		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		//ALSA"on-click":"amixer set Master toggle",
-		"format-icons": {
-			"default": ["", "", ""]
-		}
-	},
+    "layer": "top",
+    "position": "top",
+    // "mod": "dock",
+    // "exclusive": true,
+    // "passtrough": false,
+    // "gtk-layer-shell": true,
+    // "height": 0,
+    "modules-left": [
+        "custom/launcher",
+        "custom/updates",
+        "cpu",
+        "memory",
+        "tray"
+    ],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": [
+        "network",
+        "backlight",
+        // "custom/power",
+        "pulseaudio",
+        "bluetooth",
+        "clock",
+        "battery"
+    ],
 
-    "sway/workspaces": {
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "tray":{
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "wlr/workspaces": {
         "disable-scroll": false,
         "all-outputs": true,
+        "on-click": "activate",
         "format": "{icon}",
         "persistent_workspaces": {
             "1": [],
@@ -30,9 +57,6 @@
             "4": [],
             "5": [],
             "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
         },
         "format-icons": {
             "1": "",
@@ -41,9 +65,6 @@
             "4": "",
             "5": "",
             "6": "",
-            "7": "",
-            "8": "",
-            "9": "",
             "focused": " ",
             "urgent": " ",
             "default": " ",
@@ -51,53 +72,56 @@
         "icon-size": 14
     },
 
+    "custom/updates": {
+        "exec": "(pacman -Qu) | wc -l",
+        "interval": 3600,
+        "format": "📥︎ {}",
+        "on-click": "alacritty -e doas pacman -Syu && notify-send '更新完成'"
+    },
     "network": {
-		"tooltip": false,
-		"format-wifi": "  {essid}",
-		"format-ethernet": ""
-	},
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-		"interval":1,
-        "on-scroll-up": "light -A 5",
-        //"on-scroll-up": "xbacklight -inc 5",
-        "on-scroll-down": "light -A 5",
-		//"on-scroll-down": "xbacklight -dec 5"
-	},
+        "interval": 3,
+        "format-wifi": "⥣ {bandwidthUpBits} ⥥ {bandwidthDownBits}",
+        "format-disconnected": "",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz",
+    },
+    "backlight": {
+        "format": " {}%",
+        "interval":1,
+        "on-scroll-up": "brightnessctl set +1%",
+        "on-scroll-down": "brightnessctl set 1%-",
+    },
+    "pulseaudio": {
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
+        "scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-muted": "🔇",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    "clock": {
+        "format": "{: %R   %m/%d}"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " ",
+        "on-click": "blueberry"
+    },
     "battery": {
         "states": {
-            "good": 95,
+            "good": 80,
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}  {capacity}%",
-        "format-charging": "🔋⚡{capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-charging": "🕯️ {capacity}%",
+        // 🕯️⚡
+        "format-plugged": "🕯️ {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-	"tray":{
-		"icon-size":18,
-		"spacing": 10
-	},
-    "clock": {
-        "format": "{: %R   %m/%d}"
-    },
-    "cpu": {
-        "interval": 15,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "custom/launcher":{
-        "format": " ",
-        "on-click": "rofi -show drun",
-        "on-click-right": "killall rofi"
+        // "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
     "custom/power":{
         "format": " ",

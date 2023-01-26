@@ -1,26 +1,21 @@
-# Colors (Monokai Pro)
 colors:
-  # Default colors
   primary:
-    background: '#282a36'
-    foreground: '#fffaf8'
+    background: '#131621' # '#292A37' '#282a36'
+    foreground: '#fffaf8' # '#d9e0ee'
   cursor:
-      text: "#777777"
-      cursor: "#89dceb"
-  # Normal colors
+      text: '#777777'
+      cursor: '#89dceb'
   normal:
     black:   '#4d4f66'
     red:     '#ff5555'
     green:   '#addb67'
-    yellow:  '#ffd866'
-    blue:    '#96cdfb'
+    yellow:  '#ffd866' # '#7E94C2'
+    blue:    '#96cdfb' # '#4A85DE' '#151728'
     magenta: '#bd93f9'
     cyan:    '#8be9fd'
       #white: = '#fffad8'
-      #white: = '#fffaf8'
+      #white: = '#fffaf8' #defae6 #fafae6
     white:   '#f8f8f2'
-
-  # Bright colors
   bright:
     black:   '#4d4f66'
     red:     '#ff5555'
@@ -30,62 +25,49 @@ colors:
     magenta: '#bd93f9'
     cyan:    '#8be9fd'
     white:   '#f8f8f2'
-# Font configuration
+
 font:
-  # Normal (roman) font face
   normal:
-    family: InconsolataGo Nerd Font
+    family: LXGW WenKai Mono
     style: Regular
-
-  # Bold font face
   bold:
-    family: InconsolataGo Nerd Font
+    family: LXGW WenKai Mono
     style: Bold
-
-  # Italic font face
   italic:
-    family: InconsolataGo Nerd Font
+    family: LXGW WenKai Mono
     style: Italic
-
-  # Bold italic font face
   bold_italic:
-    family: InconsolataGo Nerd Font
+    family: LXGW WenKai Mono
     style: Bold Italic
-
-  # Point size
-  size: 24.0
-
-  offset:
-    x: 0
-    y: 0
-
-  glyph_offset:
-    x: 0
-    y: 0
+  size: 25.0
 
 window:
   decorations: none
+  # other
   dimensions:
     columns: 88
     lines: 29
-    
-  # Window position (changes require restart)
-  #
-  # Specified in number of pixels.
-  # If the position is not set, the window manager will handle the placement.
-  #position:
-  #  x: 0
-  #  y: 0
-
-  # Window padding (changes require restart)
-  #
-  # Blank space added around the window in pixels. This padding is scaled
-  # by DPI and the specified value is always added at both opposing sides.
+  ## Hyprland
   padding:
-    x: 255
-    y: 0
+   x: 30
+   y: 0
+  ## gnome
+  # padding:
+  #  x: 255
+  #  y: 0
+  ## wayfire
+  # dimensions:
+  #   columns: 83
+  #   lines: 23
+  # padding:
+  #   x: 250
+  #   y: 17
   dynamic_padding: false
   opacity: 0.8
+
+scrolling:
+  history: 10000
+  multiplier: 3
 
   # Startup Mode (changes require restart)
   #
@@ -94,34 +76,11 @@ window:
   #   - Maximized
   #   - Fullscreen
   #
-  # Values for `startup_mode` (macOS only):
-  #   - SimpleFullscreen
-  #startup_mode: Fullscreen
+  # startup_mode: Maximized
 
   # Window title
   # title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
-
-  # Window class (Linux/BSD only):
-  #class:
-    # Application instance name
-    #instance: Alacritty
-    # General application class
-    #general: Alacritty
-
-  # GTK theme variant (Linux/BSD only)
-  #
-  # Override the variant of the GTK theme. Commonly supported values are `dark`
-  # and `light`. Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
-
-scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
-  history: 10000
-
-  # Scrolling distance multiplier.
-  multiplier: 3
 

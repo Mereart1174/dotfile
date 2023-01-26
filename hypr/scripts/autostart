@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+
+# Variables
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+# Notification Daemon
+dunst &
+
+# Eye Protection
+wlsunset -l 90.0:0.0 -t 4000 &
+
+# Record Screen
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+# Status Bar
+waybar &
+# exec-once = eww -c $HOME/.config/eww/bar/ open bar
+
+# Input Method
+fcitx5 -dr &
+
+# Wallpaper
+swww init
+swww img ~/Wallpaper/picture/hole.png &
+# exec-once = mpvpaper -o "no-audio loop" eDP-1 ~/Wallpaper/video/world/city.mp4
+
+# Other
+$scripts/default/battery_notification &
+$scripts/default/idle_handler &
+
+# Proxy
+cfw &

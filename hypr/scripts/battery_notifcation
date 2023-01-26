@@ -1,0 +1,16 @@
+#!/bin/bash
+
+prev_battery=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+
+while true; do
+    curr_battery=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+    if [[ $curr_battery -le 20 && $prev_battery -gt 20 ]]; then
+        notify-send --urgency=CRITICAL "电池电量低" "Level: ${curr_battery}%"
+    elif [[ $curr_battery -le 10 && $prev_battery -gt 10 ]]; then
+        notify-send --urgency=CRITICAL "电池电量过低" "Level: ${curr_battery}%"
+    elif [[ $curr_battery -le 5 && $prev_battery -gt 5 ]]; then
+        notify-send --urgency=CRITICAL "即将关机" "Level: ${curr_battery}%"
+    fi
+    prev_battery=$curr_battery
+    sleep 60
+done
