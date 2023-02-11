@@ -23,12 +23,13 @@ fcitx5 -dr &
 
 # Wallpaper
 swww init
-swww img ~/Wallpaper/picture/hole.png &
+swww img ~/wall/pics/top/11.jpg &
 # exec-once = mpvpaper -o "no-audio loop" eDP-1 ~/Wallpaper/video/world/city.mp4
 
 # Other
-$scripts/default/battery_notification &
-$scripts/default/idle_handler &
+$scripts/battery_notification &
+$scripts/idle_handler &
+# qqmusic &
 
 # Proxy
 cfw &

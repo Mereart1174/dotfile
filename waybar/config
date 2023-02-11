@@ -30,13 +30,19 @@
         "on-click": "rofi -show drun",
         "on-click-right": "killall rofi"
     },
+    "custom/updates": {
+        "exec": "(pacman -Qu) | wc -l",
+        "interval": 3600,
+        "format": "📥︎ {}",
+        "on-click": "alacritty -e doas pacman -Syu && notify-send '更新结束'"
+    },
     "cpu": {
-        "interval": 5,
+        "interval": 3,
         "format": " {}%",
         "max-length": 10
     },
     "memory": {
-        "interval": 5,
+        "interval": 3,
         "format": " {}%",
         "max-length": 10
     },
@@ -72,12 +78,6 @@
         "icon-size": 14
     },
 
-    "custom/updates": {
-        "exec": "(pacman -Qu) | wc -l",
-        "interval": 3600,
-        "format": "📥︎ {}",
-        "on-click": "alacritty -e doas pacman -Syu && notify-send '更新完成'"
-    },
     "network": {
         "interval": 3,
         "format-wifi": "⥣ {bandwidthUpBits} ⥥ {bandwidthDownBits}",
@@ -86,7 +86,6 @@
     },
     "backlight": {
         "format": " {}%",
-        "interval":1,
         "on-scroll-up": "brightnessctl set +1%",
         "on-scroll-down": "brightnessctl set 1%-",
     },
