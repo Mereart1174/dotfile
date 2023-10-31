@@ -8,7 +8,8 @@ scripts=$config/scripts
 dunst &
 
 # Eye Protection
-wlsunset -l 90.0:0.0 -t 4000 &
+# wlsunset -l 90.0:0.0 -t 4000 &
+wlsunset -l 0.0:90.0 -t 4000 &
 
 # Record Screen
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
@@ -22,13 +23,14 @@ waybar &
 fcitx5 -dr &
 
 # Wallpaper
-swww init
-swww img ~/wall/pics/top/11.jpg &
-# exec-once = mpvpaper -o "no-audio loop" eDP-1 ~/Wallpaper/video/world/city.mp4
+# swww init
+# swww img ~/wall/pics/top/30.jpg &
+mpvpaper -o "no-audio loop" eDP-1 ~/Wallpaper/video/dongman/deepsea.mp4 &
+mpvpaper -o "no-audio loop" HDMI-A-1 ~/Wallpaper/video/dongman/platfrom.mp4 &
 
 # Other
 $scripts/battery_notification &
-$scripts/idle_handler &
+# $scripts/idle_handler &
 # qqmusic &
 
 # Proxy

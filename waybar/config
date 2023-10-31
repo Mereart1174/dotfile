@@ -14,7 +14,8 @@
         "memory",
         "tray"
     ],
-    "modules-center": ["wlr/workspaces"],
+    // "modules-center": ["wlr/workspaces"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": [
         "network",
         "backlight",
@@ -26,7 +27,7 @@
     ],
 
     "custom/launcher":{
-        "format": " ",
+        "format": "  ",
         "on-click": "rofi -show drun",
         "on-click-right": "killall rofi"
     },
@@ -104,7 +105,8 @@
         "format": "{: %R   %m/%d}"
     },
     "bluetooth": {
-        "format": " {status}",
+        // "format": " {status}",
+        "format": "",
         "format-connected": " ",
         "on-click": "blueberry"
     },

@@ -1,29 +1,23 @@
-export JAVA_HOME="/usr/lib/jvm/default"
-export LD_LIBRARY_PATH=${JAVA_HOME}/lib/server:${LD_LIBRARY_PATH}
+# Reference:  lilydjwg/dotzsh
 
-export EDITOR="nvim --noplugin"
+export EDITOR="nvim"
 export PAGER="less"
 # export VISUAL="nvim --noplugin"
 
 export CARGO_BIN="$HOME/.cargo/bin"
-
-export GOROOT="/usr/lib/go"
-export GOPATH="$HOME/go"
-export GOBIN="$HOME/go/bin"
+# export NPM_BIN="$HOME/.pnpm/bin"
+# export PATH=$CARGO_BIN:$NPM_BIN:$PATH
+export PATH=$CARGO_BIN:$PATH
 
 # bat
 export BAT_THEME="Dracula"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
-export SCREENSHOT=$HOME/Screenshot/
-
-export PATH=$GOBIN:$JAVA_HOME:$FLUTTER_GIT_DIRECTORY:$CARGO_BIN:$HOME/.pub-cache/bin:$PATH
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-
-# starship and zoxide
+# starship zoxide
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
 
 # ignore case when completing
 autoload -Uz compinit && compinit -u
@@ -32,7 +26,13 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 HISTFILE=~/.config/zsh/zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+
+# 不保存重复的历史记录项
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+
+# 在命令前添加空格，不将此命令添加到记录文件中
+setopt hist_ignore_space
 
 plugins=(
     zsh-autosuggestions
@@ -48,8 +48,9 @@ alias suod=doas
 alias n=nvim
 alias h=helix
 alias nn="nvim --clean"
+alias sn="doas nvim"
 alias grep=rg
-alias cd=z
+# alias cd=z
 alias s=source
 alias r=ranger
 alias qe=exit
@@ -63,30 +64,32 @@ alias hg="history 1 | rg"
 
 alias nz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
-# alias nw="nvim ~/.config/wayfire.ini"
+alias nw="nvim ~/.config/wayfire.ini"
 alias na="nvim ~/.config/alacritty/alacritty.yml"
-# alias nf="nvim flake.nix"
 alias nh="nvim ~/.config/hypr/hyprland.conf"
-alias nsy="nvim +PackerSync"
 alias np="doas nvim /etc/profile.d/my_env.sh"
-alias rr="cargo r"
 alias nm="nvim src/main.rs"
 alias nb="nvim src/lib.rs"
 alias nc="nvim Cargo.toml"
+alias nf="nvim flake.nix"
 alias ce="nvim ~/Mygits/Learning/CE/common.md"
+alias nce="nvim ~/Mygits/Learning/CE/nix.md"
+alias rr="cargo r"
 
-alias al="neofetch|lolcat"
-alias ls="exa --icons --group-directories-first --tree --level=1"
-alias lss="exa --icons --group-directories-first --tree --level=3"
-alias lsss="exa --icons --group-directories-first --tree"
-alias ll="exa --icons --group-directories-first --tree --level=1 -lh"
-alias la="exa --icons --group-directories-first --sort=size --tree --level=1 -lah"
+alias nl="neofetch | lolcat"
+alias ls="eza --icons --group-directories-first --tree --level=1"
+alias lss="eza --icons --group-directories-first --tree --level=3"
+alias lsss="eza --icons --group-directories-first --tree"
+alias ll="eza --icons --group-directories-first --tree --level=1 -lh"
+alias la="eza --icons --group-directories-first --sort=size --tree --level=1 -lah"
 alias sg="ss -lp | grep"
 alias k="kill -9"
 
 alias sp="sudo pacman"
 alias sps="sudo pacman -S"
 alias spss="pacman -Ss"
+alias spnn="nix search nixpkgs"
+alias sprr="cargo search --registry crates-io"
 alias spq="pacman -Q"
 alias syu="sudo pacman -Syu"
 alias cmd="pacman -F"
@@ -115,13 +118,15 @@ alias scc="doas systemctl start cockpit"
 alias cman="man -M /usr/share/man/zh_CN"
 alias fq="export http_proxy=127.0.0.1:7890; export https_proxy=127.0.0.1:7890"
 alias rdb="rust-lldb"
-alias sprr="cargo search --registry crates-io"
 alias ng="nvim gg"
 alias plog='bat /var/log/pacman.log | rg "installed|reinstalled|removed|downgraded|upgraded"'
+# alias plog='cat /var/log/pacman.log | grep -P/E "installed|reinstalled|removed|downgraded|upgraded"'
 alias httpser="npx http-server"
 alias pgsql="podman exec -it mypg psql -U postgres -d postgres"
-alias psql="podman exec -it mypg psql -U mypg -d pgdb"
-alias windows="doas mount /dev/nvme0n1p1 /mnt/win"
+alias mypg="pd start mypg; podman exec -it mypg psql -U mypg -d"
+alias windows="doas mount /dev/nvme0n1p1 /mnt"
+alias nixos="doas mount /dev/nvme0n1p7 /mnt"
+alias mynix="pd start nix; pd exec -it nix bash"
 
 ex ()
 {
@@ -144,3 +149,11 @@ ex ()
     fi
 }
 bindkey -e
+
+# pnpm
+export PNPM_HOME="/home/phil/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

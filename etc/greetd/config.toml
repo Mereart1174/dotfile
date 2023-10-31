@@ -2,5 +2,6 @@
 vt = 1
 
 [default_session]
-command = "tuigreet --cmd Hyprland"
-user = "phil"
+command = "tuigreet --remember --time --asterisks --cmd Hyprland --greeting 'Welcome to ArchLinux'"
+// command = "tuigreet --cmd wayfire"
+username = "phil"
