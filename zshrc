@@ -16,8 +16,8 @@ export MANROFFOPT="-c"
 
 # starship zoxide
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-eval "$(direnv hook zsh)"
+# eval "$(zoxide init zsh)"
+# eval "$(direnv hook zsh)"
 
 # ignore case when completing
 autoload -Uz compinit && compinit -u
